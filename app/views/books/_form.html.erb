@@ -1,6 +1,6 @@
-<%= form_with(model: book) do |form| %>
+<%= form_with(model: book, html: { class: "space-y-6" }) do |form| %>
   <% if book.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
@@ -11,42 +11,54 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <div class="mt-1">
+      <%= form.text_field :title %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+  <div class="form-group">
+    <%= form.label :author %>
+    <div class="mt-1">
+      <%= form.text_field :author %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :good_reads_score, style: "display: block" %>
-    <%= form.text_field :good_reads_score %>
+  <div class="form-group">
+    <%= form.label :good_reads_score %>
+    <div class="mt-1">
+      <%= form.number_field :good_reads_score, step: 0.01 %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :good_reads_url, style: "display: block" %>
-    <%= form.text_field :good_reads_url %>
+  <div class="form-group">
+    <%= form.label :good_reads_url %>
+    <div class="mt-1">
+      <%= form.text_field :good_reads_url %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :good_reads_description, style: "display: block" %>
-    <%= form.text_area :good_reads_description %>
+  <div class="form-group">
+    <%= form.label :good_reads_description %>
+    <div class="mt-1">
+      <%= form.text_area :good_reads_description %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :cover_url, style: "display: block" %>
-    <%= form.text_field :cover_url %>
+  <div class="form-group">
+    <%= form.label :cover_url %>
+    <div class="mt-1">
+      <%= form.text_field :cover_url %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :publish_date, style: "display: block" %>
-    <%= form.date_field :publish_date %>
+  <div class="form-group">
+    <%= form.label :publish_date %>
+    <div class="mt-1">
+      <%= form.date_field :publish_date %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'Submit', class: 'btn-primary' %>
 <% end %>
