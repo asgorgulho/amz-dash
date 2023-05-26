@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: amz_dash_production
-  username: amz_dash
-  password: <%= ENV["AMZ_DASH_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
