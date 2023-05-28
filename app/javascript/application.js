@@ -5,6 +5,7 @@ import consumer from './channels/consumer'
 import CableReady from "cable_ready"
 import mrujs from "mrujs";
 import { CableCar } from "mrujs/plugins"
+import "flowbite/dist/flowbite.turbo.js";
 
 mrujs.start({
   plugins: [
